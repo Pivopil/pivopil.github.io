@@ -45,7 +45,7 @@
                 <code id="top-movies"></code>
                 <h3 class="subtitle is-2">Set rating for the movie</h3>
                 <code id="set-rating"></code>
-                <h3 class="subtitle is-2">Get Movie by title with Best Picture Oscar</h3>
+                <h3 class="subtitle is-2">Get Movie by title with Best Picture Oscar (be sure to replace spaces with the plus symbol <p>+</p>)</h3>
                 <code id="best-picture"></code>
             </div>
         </div>
@@ -82,7 +82,7 @@
         setRating.appendChild(curlSetRating);
 
         const bestPicture = document.getElementById("best-picture");
-        const curlBestPicture = document.createTextNode("curl 'http://localhost:8080/api/movies/search/findMovieByTitle?title=Movie 1'\n" +
+        const curlBestPicture = document.createTextNode("curl 'http://localhost:8080/api/movies/search/findMovieByTitle?title=Movie+1'\n" +
             "                    --header 'Content-Type: application/json'\n" +
             "                    --header 'Authorization: " + response.credential + "'");
 
