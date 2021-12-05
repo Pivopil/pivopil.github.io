@@ -62,7 +62,7 @@
 <script>
     function handleCredentialResponse(response) {
         console.log("Encoded JWT ID token: " + response.credential);
-        const topMovies = document.getElementById("top-movies").textContent;
+        const topMovies = document.getElementById("top-movies");
         const curlTopMovies = document.createTextNode("curl --location --request GET 'http://localhost:8080/api/movies/top'\n" +
             "                    --header 'Content-Type: application/json'\n" +
             "                    --header 'Authorization: " + response.credential + "'");
