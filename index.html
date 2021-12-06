@@ -67,14 +67,14 @@
     function handleCredentialResponse(response) {
         console.log("Encoded JWT ID token: " + response.credential);
         const topMovies = document.getElementById("top-movies");
-        const curlTopMovies = document.createTextNode("curl 'http://localhost:8080/api/movies/top'\n" +
+        const curlTopMovies = document.createTextNode("curl 'https://springbootapp.ecs.awsdevbot.com/api/movies/top'\n" +
             "                    --header 'Content-Type: application/json'\n" +
             "                    --header 'Authorization: " + response.credential + "'");
 
         topMovies.appendChild(curlTopMovies);
 
         const setRating = document.getElementById("set-rating");
-        const curlSetRating = document.createTextNode("curl --location --request PATCH 'http://localhost:8080/api/movies/1/rating'\n" +
+        const curlSetRating = document.createTextNode("curl --location --request PATCH 'https://springbootapp.ecs.awsdevbot.com/api/movies/16/rating'\n" +
             "                    --data-raw '{\"score\": 77 }'\n" +
             "                    --header 'Content-Type: application/json'\n" +
             "                    --header 'Authorization: " + response.credential + "'");
@@ -82,7 +82,7 @@
         setRating.appendChild(curlSetRating);
 
         const bestPicture = document.getElementById("best-picture");
-        const curlBestPicture = document.createTextNode("curl 'http://localhost:8080/api/movies/search/findMovieByTitle?title=Movie+1'\n" +
+        const curlBestPicture = document.createTextNode("curl 'https://springbootapp.ecs.awsdevbot.com/api/movies/search/findMovieByTitle?title=Avatar'\n" +
             "                    --header 'Content-Type: application/json'\n" +
             "                    --header 'Authorization: " + response.credential + "'");
 
