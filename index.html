@@ -74,7 +74,7 @@
         topMovies.appendChild(curlTopMovies);
 
         const setRating = document.getElementById("set-rating");
-        const curlSetRating = document.createTextNode("curl --location --request PATCH 'https://springbootapp.ecs.awsdevbot.com/api/movies/16/rating'\n" +
+        const curlSetRating = document.createTextNode("curl --location --request POST 'https://springbootapp.ecs.awsdevbot.com/api/movies/16/rating'\n" +
             "                    --data-raw '{\"score\": 77 }'\n" +
             "                    --header 'Content-Type: application/json'\n" +
             "                    --header 'Authorization: " + response.credential + "'");
